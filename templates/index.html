@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Weight Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fish Weight Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="species">Species:</label>
+            <select id="species" name="species" required>
+                {% for species in unique_species %}
+                <option value="{{ species }}">{{ species }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="length1">Length1:</label>
+            <select id="length1" name="length1" required>
+                {% for length1 in unique_length1 %}
+                <option value="{{ length1 }}">{{ length1 }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="length2">Length2:</label>
+            <select id="length2" name="length2" required>
+                {% for length2 in unique_length2 %}
+                <option value="{{ length2 }}">{{ length2 }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="length3">Length3:</label>
+            <select id="length3" name="length3" required>
+                {% for length3 in unique_length3 %}
+                <option value="{{ length3 }}">{{ length3 }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="height">Height:</label>
+            <select id="height" name="height" required>
+                {% for height in unique_height %}
+                <option value="{{ height }}">{{ height }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="width">Width:</label>
+            <select id="width" name="width" required>
+                {% for width in unique_width %}
+                <option value="{{ width }}">{{ width }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
