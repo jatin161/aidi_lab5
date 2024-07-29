@@ -14,7 +14,7 @@ with open('feature_names.pkl', 'rb') as file:
     feature_names = pickle.load(file)
 
 # Load dataset for unique values
-df = pd.read_csv(r"C:\Users\jsjat\New folder\Fish.csv")
+df = pd.read_csv(r"Fish.csv")
 
 # Extract unique values for each parameter
 unique_species = df['Species'].unique()

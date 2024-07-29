@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 # Load dataset
-df = pd.read_csv(r"C:\Users\jsjat\New folder\Fish.csv")
+df = pd.read_csv(r"Fish.csv")
 
 # Preprocess data
 # Assuming 'Species' is a categorical column and needs to be encoded
